@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use slim
 gem 'slim-rails'
+
+# For convert erb to slim
+gem 'html2slim'
