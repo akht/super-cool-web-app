@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all.order(created_at: 'desc')
+    @topics = Topic.all.sample(3)
   end
 end
