@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all.sample(3)
+    @topics = Topic.all.sample(1)
   end
 end
