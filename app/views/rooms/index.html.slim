@@ -1,0 +1,23 @@
+h1 Listing rooms
+
+table
+  thead
+    tr
+      th Name
+      th Url
+      th
+      th
+      th
+
+  tbody
+    - @rooms.each do |room|
+      tr
+        td = room.name
+        td = room.url
+        td = link_to 'Show', room
+        td = link_to 'Edit', edit_room_path(room)
+        td = link_to 'Destroy', room, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Room', new_room_path
