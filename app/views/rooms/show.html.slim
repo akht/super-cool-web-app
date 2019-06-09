@@ -7,6 +7,19 @@ p
   strong Url:
   = @room.url
 
+p
+  strong Topics:
+  - if @room.topics.any?
+    ul
+      - @room.topics.each do |topic|
+        li = topic.name
+
+= form_for([@room, @room.topics.build]) do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions = f.submit
+
 => link_to 'Edit', edit_room_path(@room)
 '|
 =< link_to 'Back', rooms_path
