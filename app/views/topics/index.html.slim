@@ -1,0 +1,8 @@
+p
+  strong Topics:
+  - if @room.topics.any?
+    ul
+      - @room.topics.each do |topic|
+        li = topic.name
+
+= link_to 'Back To Room', room_path(@room)

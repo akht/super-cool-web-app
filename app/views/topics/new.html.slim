@@ -1,0 +1,9 @@
+h1 New room
+
+= form_for([@room, @room.topics.build]) do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions = f.submit
+
+= link_to 'Back To Room', room_path(@room)
