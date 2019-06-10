@@ -1,3 +1,6 @@
-p = @topic[0].name
+- if @topic.any?
+  p = @topic[0].name
 
-p = link_to '次の話題', room_topic_path(@room)
+  p = link_to '次の話題', room_topic_path(@room)
+- else
+  '(´;︵;`)話題がないよ
