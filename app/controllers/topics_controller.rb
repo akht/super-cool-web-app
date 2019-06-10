@@ -6,7 +6,6 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topics = @room.topics
   end
 
   def show
