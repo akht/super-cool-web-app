@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :rooms do
+  resources :rooms, param: :token do
     resources :topics
   end
 

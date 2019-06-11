@@ -1,23 +1,25 @@
 p#notice = notice
 
 p
-  strong Name:
+  strong 部屋:
   = @room.name
-p
-  strong Url:
-  = @room.url
 
 p
-  = link_to 'トーク開始！', room_topic_path(@room)
+  strong URL:
+  = request.url
+
+p
+  - if @room.topics.empty?
+    = 'まだ話題がありません'
+  - else
+    = @room.topics.size.to_s + '件の話題があります'
 
 p
   = link_to '話題を登録', new_room_topic_path(@room)
 
 p
-  = link_to '全ての話題を表示', room_topics_path(@room)
-  span
-    = '(' + @room.topics.size.to_s + '件)'
+  = link_to 'トーク開始！', room_topics_path(@room.token)
 
-=> link_to 'Edit', edit_room_path(@room)
+=> link_to 'Edit', edit_room_path(@room.token)
 '|
 =< link_to 'Back', rooms_path
