@@ -3,6 +3,7 @@ p#notice = notice
 p
   strong 部屋:
   = @room.name
+  = link_to '編集', edit_room_path(@room.token)
 
 p
   strong URL:
@@ -20,6 +21,4 @@ p
 p
   = link_to 'トーク開始！', room_topics_path(@room.token)
 
-=> link_to 'Edit', edit_room_path(@room.token)
-'|
-=< link_to 'Back', root_path
+= link_to '戻る', root_path
