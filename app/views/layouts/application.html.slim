@@ -8,5 +8,6 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = link_to 'トップ', root_path
+    - if !current_page?(root_path)
+      = link_to 'トップ', root_path
     = yield
