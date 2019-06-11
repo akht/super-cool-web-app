@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+$pepapon-blue: #4D779F;
+
+$primary: $pepapon-blue;
+
+@import "bulma";

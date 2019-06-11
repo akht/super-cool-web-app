@@ -1,14 +1,23 @@
-h1 ペパトーーーク！にようこそ
 
-h2 ランチで楽しくおしゃべりしよう🥳
+section.hero.is-primary
+  div.hero-body
+    div.container
+      h1.title
+        | ペパトーーーク！
+      h2.subtitle.has-text-weight-bold
+        |
+          もっと<br>
+          おもしろくできる(ランチを)
 
-= link_to '部屋を作る', new_room_path
+section.section
+  h2 使い方<br>
+  p
+    |
+      * 上のリンクから部屋を作ろう<br>
+      * 専用のURLが発行されるのでメンバーにslackで共有しよう<br>
+      * そのURLから事前に話題を登録してもらおう<br>
+      * 話題が集まったらゲームを開始しよう<br>
+      * 表示される話題についてみんなで話そう<br>
 
-p
-  |
-    使い方<br>
-    * 上のリンクから部屋を作ろう<br>
-    * 専用のURLが発行されるのでメンバーにslackで共有しよう<br>
-    * そのURLから事前に話題を登録してもらおう<br>
-    * 話題が集まったらゲームを開始しよう<br>
-    * 表示される話題についてみんなで話そう<br>
+section.section
+  = link_to '部屋を作る', new_room_path, :class => "button is-large is-info"

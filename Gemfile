@@ -75,3 +75,6 @@ gem 'slim-rails'
 
 # For convert erb to slim
 gem 'html2slim'
+
+# Use Bulma
+gem "bulma-rails", "~> 0.7.5"
