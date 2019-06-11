@@ -20,7 +20,7 @@ class TopicsController < ApplicationController
   private
 
   def set_room
-    @room = Room.find(params[:room_id])
+    @room = Room.find_by(token: params[:room_token])
   end
 
   def topic_params
