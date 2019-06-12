@@ -1,0 +1,9 @@
+ja:
+  helpers:
+    submit:
+      room:
+        create: "登録"
+        update: "変更"
+      topic:
+        create: "登録"
+        update: "変更"

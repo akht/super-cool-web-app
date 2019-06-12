@@ -1,25 +1,30 @@
 p#notice = notice
 
-p
-  strong 部屋:
-  = @room.name
+.form.l-content
+  header.form__header
+    h1.form__title.a-title-lg
+      = @room.name
+  .form__description
+    - if @room.topics.empty?
+      p
+        | まだ話題が登録されてません。まずは、#{@room.name}の参加者に話題を登録してもらいましょう。
+    - else
+      p
+        | #{@room.topics.size}件の話題が登録されています。
+  .form__items
+    .form__item
+      textarea.a-copy-text
+        | #{@room.name}に参加する皆さんへ&#13;
+        | 以下のURLから#{@room.name}で話したい話題を登録してください。&#13;
+        | #{request.url}/topics/new &#13;
+        | 当日話題ガチャを引き、ガチャで出た話題をみんなで話しましょう。
+  .form__actions
+    - if @room.topics.empty?
+      = link_to '自分も話題を登録する', new_room_topic_path(@room), class: 'a-button'
+    - else
+      = link_to 'もっと話題を登録', new_room_topic_path(@room), class: 'a-button'
+      = link_to 'トーク開始！', room_topics_path(@room.token), class: 'a-button is-danger'
 
-p
-  strong URL:
-  = request.url
-
-p
-  - if @room.topics.empty?
-    = 'まだ話題がありません'
-  - else
-    = @room.topics.size.to_s + '件の話題があります'
-
-p
-  = link_to '話題を登録', new_room_topic_path(@room)
-
-p
-  = link_to 'トーク開始！', room_topics_path(@room.token)
-
-=> link_to 'Edit', edit_room_path(@room.token)
-'|
-=< link_to 'Back', root_path
+  .form__nav
+    = link_to 'トーク部屋名を変更', edit_room_path(@room.token), class: 'form__nav-link a-text-link'
+    = link_to '最初からやり直す', root_path, class: 'form__nav-link a-text-link'

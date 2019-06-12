@@ -1,9 +1,11 @@
-h1 New room
-
 = form_for([@room, @room.topics.build]) do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions = f.submit
-
-= link_to 'Back To Room', room_path(@room)
+  .form.l-content
+    header.form__header
+      h1.form__title.a-title-lg
+        | 話題を登録
+    .form__items
+      = f.text_area :name, class: 'a-text-input', placeholder: '最近買ってよかったものを教えて！'
+    .form__actions
+      = f.submit class: 'a-button'
+    .form__nav
+      = link_to '戻る', room_path(@room), class: 'form__nav-link a-text-link'
