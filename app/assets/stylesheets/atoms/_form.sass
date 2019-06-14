@@ -1,0 +1,49 @@
+.a-text-input
+  font-size: 2rem
+  background-color: white
+  width: 100%
+  height: 2.125em
+  padding: 0 .5em
+  font-weight: 800
+  transition: all .2s ease-out
+  &:hover,
+  &:focus,
+  &:active
+    box-shadow: #ff9300 0 0 0 .125em
+
+textarea.a-text-input
+  height: auto
+  padding: .25em .5em
+  line-height: 1.4
+  min-height: 8em
+
+textarea.a-copy-text
+  font-size: 1.125rem
+  width: 100%
+  padding: 0 .5em
+  height: auto
+  padding: .25em .5em
+  line-height: 1.4
+  min-height: 8em
+  border: dashed 2px $black
+
+
+.a-text-link
+  color: $black
+  text-decoration: underline
+  cursor: pointer
+  &:hover
+    text-decoration: none
+
+=placeholder($color)
+  &::placeholder
+    color: $color
+  // IE
+  &:-ms-input-placeholder
+    color: $color
+  // Edge
+  &::-ms-input-placeholder
+    color: $color
+input,
+textarea
+  +placeholder(#ccc)

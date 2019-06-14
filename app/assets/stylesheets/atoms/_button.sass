@@ -1,0 +1,22 @@
+.a-button
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 2.75em
+  background-color: $black
+  font-size: 1.75rem
+  text-decoration: none
+  font-weight: 800
+  color: $yellow
+  padding: 0 2em
+  border-radius: .25em
+  cursor: pointer
+  transition: all .2s ease-out
+  min-width: 8em
+  &:hover
+    color: $orange
+    background-color: rgba($black, .95)
+    box-shadow: $orange 0 0 0 .125em
+  &.is-danger
+    background-color: $red
+    color: white

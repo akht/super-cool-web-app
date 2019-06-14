@@ -1,14 +1,28 @@
-h1 ペパトーーーク！にようこそ
+.home.l-content
+  .home__hgroup
+    h1.home__title.a-title-xl
+      | ペパトーク
+    h2.home__sub-title.a-title-lg
+      | ランチの話題はガチャ次第
+  .home__action
+    = link_to 'トーク部屋を作る', new_room_path, class: 'home__action-button a-button'
+  .home__nav
+    .home__nav-link.a-text-link
+      | はじめての方はこちら
 
-h2 ランチで楽しくおしゃべりしよう🥳
 
-= link_to '部屋を作る', new_room_path
-
-p
-  |
-    使い方<br>
-    * 上のリンクから部屋を作ろう<br>
-    * 専用のURLが発行されるのでメンバーにslackで共有しよう<br>
-    * そのURLから事前に話題を登録してもらおう<br>
-    * 話題が集まったらゲームを開始しよう<br>
-    * 表示される話題についてみんなで話そう<br>
+//
+  section.usage
+    h2.usage__title
+      | 使い方
+    .usage__items
+      .usage__item
+        | 上のリンクから部屋を作ろう
+      .usage__item
+        | 専用のURLが発行されるのでメンバーにslackで共有しよう
+      .usage__item
+        | そのURLから事前に話題を登録してもらおう
+      .usage__item
+        | 話題が集まったらゲームを開始しよう
+      .usage__item
+        | 表示される話題についてみんなで話そう

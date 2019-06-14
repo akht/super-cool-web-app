@@ -1,8 +1,16 @@
-p
-  strong Topics:
-  - if @room.topics.any?
-    ul
+- if @room.topics.any?
+  .topics
+    ul.js-slider.topics__items
       - @room.topics.each do |topic|
-        li = topic.name
+        li.a-title-xl.topics__item
+          .topics__item-inner
+            = topic.name
 
-= link_to 'Back To Room', room_path(@room)
+    nav.topics__nav
+      = link_to 'Back To Room', room_path(@room)
+
+javascript:
+  var slider = tns({
+    container: '.js-slider',
+    items: 1
+  });
