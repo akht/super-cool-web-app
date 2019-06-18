@@ -1,23 +1,35 @@
 .form
-  width: 30rem
+  width: 36rem
   max-width: 100%
+  padding-left: 1.5rem
+  padding-right: 1.5rem
 
 .form__title
   text-align: center
-  white-space: nowrap
+  line-height: 1.4
+  +mq($from: mobile, $until: desktop)
+    font-size: 1.5rem
+  +mq($from: desktop)
+    font-size: 2.25rem
 
 .form__description
-  .form__header + &
-      margin-top: 2rem
-  p
+  +mq($from: mobile, $until: desktop)
+    font-size: 1rem
+  +mq($from: desktop)
     font-size: 1.125rem
+  .form__header + &
+      margin-top: 1.25em
+  p
     line-height: 1.5
 
 .form__items
   .form__description + &
     margin-top: 1.25rem
   .form__header + &
-    margin-top: 2rem
+    +mq($from: mobile, $until: desktop)
+      margin-top: 1rem
+    +mq($from: desktop)
+      margin-top: 2rem
 
 .form__actions
   display: flex
@@ -28,6 +40,10 @@
     margin-top: 2rem
   .a-button:not(:first-child)
     margin-top: .75em
+
+.form__action
+  +mq($from: mobile, $until: desktop)
+    width: 100%
 
 .form__nav
   display: flex

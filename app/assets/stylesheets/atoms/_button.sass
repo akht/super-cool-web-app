@@ -2,9 +2,7 @@
   display: flex
   align-items: center
   justify-content: center
-  height: 2.75em
   background-color: $black
-  font-size: 1.75rem
   text-decoration: none
   font-weight: 800
   color: $yellow
@@ -12,7 +10,14 @@
   border-radius: .25em
   cursor: pointer
   transition: all .2s ease-out
-  min-width: 8em
+  white-space: nowrap
+  height: 2.75em
+  +mq($from: mobile, $until: desktop)
+    font-size: 1.25rem
+    min-width: 100%
+  +mq($from: desktop)
+    font-size: 1.75rem
+    min-width: 8em
   &:hover
     color: $orange
     background-color: rgba($black, .95)

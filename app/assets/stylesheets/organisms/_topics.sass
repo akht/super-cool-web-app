@@ -8,6 +8,10 @@
   width: 1400px
   margin: 0 auto
   line-height: 1.4
+  +mq($from: mobile, $until: desktop)
+    font-size: 3rem
+  +mq($from: desktop)
+    font-size: 7rem
 
 .tns-nav
   display: none
