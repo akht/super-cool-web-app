@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :set_room
 
   def index
-    @topics = @room.topics
+    @topics = @room.topics.shuffle
   end
 
   def new

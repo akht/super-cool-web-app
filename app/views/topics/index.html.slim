@@ -1,7 +1,7 @@
-- if @room.topics.any?
+- if @topics.any?
   .topics
     ul.js-slider.topics__items
-      - @room.topics.each do |topic|
+      - @topics.each do |topic|
         li.a-title-xl.topics__item
           .topics__item-inner
             = topic.name
