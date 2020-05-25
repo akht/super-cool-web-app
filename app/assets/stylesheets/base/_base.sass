@@ -1,11 +1,42 @@
+html
+  background-color: $main
+  background-image: linear-gradient(#5548af, #2c226f)
+
 body
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif
-  background-color: $yellow
-  color: $black
+  font-family: YakuHanJPs_Narrow, "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif
+  min-height: 100vh
+  color: $reversal-text
 
 .l-content
-  position: absolute
-  left: 50%
-  top: 50%
-  transform: translate(-50%, -50%)
-  padding-bottom: 20vh
+  +mq($from: mobile, $until: desktop)
+    padding: 2rem 1rem
+  +mq($from: desktop)
+    padding: 10vh 1rem 20vh
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translate(0, -50%)
+    max-height: 100vh
+    width: 100%
+    overflow: auto
+
+
+@keyframes bounceOut2
+  0%
+    opacity: 0
+    transform: scale3d(0, 0, 0)
+  25%
+    opacity: 1
+  30%
+    transform: scale3d(1.1, 1.1, 1.1)
+  50%,
+  85%
+    opacity: 1
+    transform: scale3d(1.1, 1.1, 1.1)
+  to
+    opacity: 0
+    transform: scale3d(0.3, 0.3, 0.3)
+
+.animate__bounceOut2
+  animation-duration: 2s !important
+  animation-name: bounceOut2

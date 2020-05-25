@@ -2,26 +2,55 @@
   display: flex
   align-items: center
   justify-content: center
-  background-color: $black
   text-decoration: none
   font-weight: 800
-  color: $yellow
+  color: $default-text
   padding: 0 2em
   border-radius: .25em
   cursor: pointer
-  transition: all .2s ease-out
   white-space: nowrap
   height: 2.75em
+  transition: all .4s ease-out
+  background-color: $yellow
+  background-image: linear-gradient(#fbc73b, #b77411)
+  border-style: solid
+  border-width: 1px
+  border-color: #ffdf89 #d6a521 #945d0c
+  box-shadow: rgba(black, .25) 0 .125rem .5rem 0.125em, rgba(white, .25) 0 0 .25rem 1px inset
+  text-shadow: rgba(white, .7) 0 1px 2px
   +mq($from: mobile, $until: desktop)
     font-size: 1.25rem
     min-width: 100%
   +mq($from: desktop)
-    font-size: 1.75rem
-    min-width: 8em
+    font-size: 2rem
+    min-width: 14em
   &:hover
-    color: $orange
-    background-color: rgba($black, .95)
-    box-shadow: $orange 0 0 0 .125em
+    color: #2d2d33
+    border-color: #fbdf98 #eccf7e #c79953
+    background-color: $yellow
+    box-shadow: rgba(white, .5) 0 0 1rem 0.125em, rgba(white, .5) 0 0 .5rem 1px inset
+    text-shadow: rgba(white, .7) 0 1px 4px
+  &:active
+    color: #2d2d33
+    border-color: #563508 #90620d #ffcd52
+    background-image: linear-gradient(#b77411, #fbc73b)
+    background-color: $yellow
+    box-shadow: rgba(white, .3) 0 2px 0px 0px, rgba(black, .5) 0 4px 8px inset, rgba(black, .2) 0 -4px 8px
+    text-shadow: rgba(white, .7) 0 1px 4px
+    color: #9a291f
+  &.is-disabled
+    color: #2d2d33
+    border-color: #b9b9b9
+    background-image: none
+    background-color: #b9b9b9
+    box-shadow: none
+    text-shadow: rgba(white, .7) 0 1px 1px
+    color: #888
   &.is-danger
-    background-color: $red
-    color: white
+    background-color: #de493a
+    background-image: linear-gradient(#fb5454, #9a2b12)
+    border-color: #f18381 #c55d53 #9a291f
+    color: $reversal-text
+    text-shadow: rgba(black, .5) 0 -1px 2px
+    &:hover
+      text-shadow: rgba(black, .5) 0 -1px 4px

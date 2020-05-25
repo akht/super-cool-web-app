@@ -1,24 +1,39 @@
 .form
-  width: 36rem
+  width: 48rem
   max-width: 100%
-  padding-left: 1.5rem
-  padding-right: 1.5rem
+  margin: 0 auto
+
+.form__header
+  +mq($from: mobile, $until: desktop)
+    font-size: 1.5rem
+  +mq($from: desktop)
+    font-size: 2.75rem
+  margin-bottom: 1em
 
 .form__title
   text-align: center
   line-height: 1.4
+  text-shadow: rgba(black, .3) 0 -2px 1px
+
+.form__help
+  margin-top: .5em
+  line-height: 1.4
+  color: #b9b1ea
   +mq($from: mobile, $until: desktop)
-    font-size: 1.5rem
+    font-size: 1rem
   +mq($from: desktop)
-    font-size: 2.25rem
+    font-size: 1.25rem
+  &.is-sm
+    +mq($from: mobile, $until: desktop)
+      font-size: .875rem
+    +mq($from: desktop)
+      font-size: 1rem
 
 .form__description
   +mq($from: mobile, $until: desktop)
     font-size: 1rem
   +mq($from: desktop)
-    font-size: 1.125rem
-  .form__header + &
-      margin-top: 1.25em
+    font-size: 1.25rem
   p
     line-height: 1.5
 
@@ -30,6 +45,29 @@
       margin-top: 1rem
     +mq($from: desktop)
       margin-top: 2rem
+
+.form__item
+  .a-label
+    margin-bottom: .5rem
+  .form__item + &
+    margin-top: 2rem
+
+.form__input-container
+  .form__text
+    font-weight: 800
+    white-space: nowrap
+  +mq($from: mobile, $until: desktop)
+    .form__text
+      font-size: 1rem
+      display: block
+      margin-top: .25em
+  +mq($from: desktop)
+    display: flex
+    align-items: flex-end
+    .form__text
+      font-size: 1.75rem
+      font-weight: 800
+      margin-left: .25em
 
 .form__actions
   display: flex
@@ -46,14 +84,22 @@
     width: 100%
 
 .form__nav
-  display: flex
-  justify-content: center
-  font-size: 1rem
-  margin-left: -.75em
-  margin-right: -.75em
+  +mq($from: mobile, $until: desktop)
+    font-size: 1rem
+  +mq($from: desktop)
+    font-size: 1.125rem
+    margin-left: -.75em
+    margin-right: -.75em
+    display: flex
+    justify-content: center
   .form__actions + &
-    margin-top: 1rem
+    margin-top: 1.5em
 
 .form__nav-link
   display: block
-  padding: 0 .75em
+  +mq($from: mobile, $until: desktop)
+    text-align: center
+    .form__nav-link + &
+      margin-top: 1em
+  +mq($from: desktop)
+    padding: 0 .75em

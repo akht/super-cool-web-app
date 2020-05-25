@@ -2,15 +2,27 @@
   .topics
     ul.js-slider.topics__items
       - @topics.each do |topic|
-        li.a-title-xl.topics__item
+        li.topics__item
           .topics__item-inner
+            .topics__item-to
+              | XXXXXXXXXに聞きたい！
             = topic.name
+      li.topics__item
+        .topics__item-inner
+          .topics__item-to
+            | 全ての質問が出尽くしました
 
-    nav.topics__nav
-      = link_to 'Back To Room', room_path(@room)
+    = link_to '質問収集箱', room_path(@room), class: "topics__link"
 
 javascript:
   var slider = tns({
     container: '.js-slider',
-    items: 1
+    items: 1,
+    loop: false,
+    touch: false,
+    nav: false,
+    arrowKeys: true
   });
+
+  var sampleElement = document.getElementById('sample');
+  sampleElement.innerHTML = Mikan('常に最新、最高のモバイル。Androidを開発した同じチームから。');

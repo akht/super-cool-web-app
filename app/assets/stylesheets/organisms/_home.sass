@@ -1,20 +1,31 @@
 .home__title
   text-align: center
   white-space: nowrap
+  line-height: 1.3
   +mq($from: mobile, $until: desktop)
-    font-size: 3rem
+    font-size: 2.5rem
+    br
+      display: block
   +mq($from: desktop)
-    font-size: 7rem
+    font-size: 5rem
+    br
+      display: none
 
 .home__sub-title
   text-align: center
   white-space: nowrap
+  line-height: 1.4
   +mq($from: mobile, $until: desktop)
     font-size: 1.25rem
   +mq($from: desktop)
     font-size: 2.25rem
   .home__title + &
-    margin-top: .75em
+    margin-top: 1.25em
+  .is-hidden-md-up
+    +mq($from: mobile, $until: desktop)
+      display: block
+    +mq($from: desktop)
+      display: none
 
 .home__action
   display: flex
@@ -28,9 +39,10 @@
 .home__nav
   display: flex
   justify-content: center
-  font-size: 1.25rem
-  margin-left: -.75em
-  margin-right: -.75em
+  +mq($from: mobile, $until: desktop)
+    font-size: 1rem
+  +mq($from: desktop)
+    font-size: 1.25rem
   .home__action + &
     margin-top: 1.5rem
 

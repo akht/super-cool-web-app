@@ -1,28 +1,49 @@
+.tns-ovh
+  overflow: auto !important
+
+.topics__item
+  min-height: 100vh
+
 .topics__item-inner
-  max-width: 100vw
-  height: 100vh
+  min-height: 100vh
   display: flex
+  flex-direction: column
   align-items: center
   justify-content: center
-  padding: 0 2rem 20vh
-  width: 1400px
-  margin: 0 auto
+  width: 100vw
   line-height: 1.4
+  font-weight: 600
+  overflow: auto
+  position: fixed
   +mq($from: mobile, $until: desktop)
-    font-size: 3rem
+    font-size: 2.25rem
+    padding: 1rem
   +mq($from: desktop)
-    font-size: 7rem
+    font-size: 3.75vw
+    padding: 1rem 4rem 8rem
+
+.topics__item-to
+  font-size: .875em
+  margin-bottom: .5em
 
 .tns-nav
   display: none
 
-.tns-controls
-  position: absolute
-  bottom: 1rem
-  right: 1rem
-  z-index: 2
-
-.topics__nav
+.topics__link
   position: absolute
   top: 1rem
   right: 1rem
+  text-decoration: none
+  color: rgba(white, .4)
+
+.tns-controls
+  position: absolute
+  bottom: 1rem
+  z-index: 100
+  display: flex
+  justify-content: space-between
+  width: 100%
+  padding: 0 1rem
+  button
+    outline: none
+    color: rgba(white, .4)
