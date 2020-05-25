@@ -8,6 +8,8 @@ body
   color: $reversal-text
 
 .l-content
+  overflow: auto
+  -webkit-overflow-scrolling: touch
   +mq($from: mobile, $until: desktop)
     padding: 2rem 1rem
   +mq($from: desktop)
@@ -18,7 +20,6 @@ body
     transform: translate(0, -50%)
     max-height: 100vh
     width: 100%
-    overflow: auto
 
 
 @keyframes bounceOut2
