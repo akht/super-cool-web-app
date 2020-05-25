@@ -15,12 +15,12 @@
         p
           | 只今、#{@room.topics.size}件の質問が登録されています。
       p
-        | 以下のメッセージを参加者に伝えて質問を登録してもらおう。
+        | 以下のメッセージを参加者に伝えて質問を集めよう。
     .form__items
       .form__item
         textarea.a-copy-text
-          | #{@room.name}に参加する皆さんへ&#13;
-          | 以下のURLから「#{@room.name}」で参加者への質問を登録してください。&#13;
+          | 「#{@room.name}」に参加する皆さんへ&#13;
+          | 以下のURLから「#{@room.name}」に参加する誰かに聞きたい質問を登録してください。&#13;
           | #{request.url}/topics/new &#13;
           | みんなから集めた質問のいくつかが当日ランダムで選ばれます。
     .form__actions

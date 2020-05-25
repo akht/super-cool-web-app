@@ -7,7 +7,7 @@
       .form__items
         .form__item
           label.a-label
-            | 誰に聞きたい質問ですか？
+            | 誰に聞きたいですか？
           .form__input-container
             = f.text_field :name, class: 'a-text-input', placeholder: '聞きたい人を入力', required: 'required'
             span.form__text
@@ -23,4 +23,4 @@
       .form__actions
         = f.submit class: 'a-button', value: 'この質問を登録'
       .form__nav
-        = link_to '戻る', room_path(@room), class: 'form__nav-link a-text-link'
+        = link_to '質問収集箱へ', room_path(@room), class: 'form__nav-link a-text-link'
