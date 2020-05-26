@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @topic = @room.topics.build
   end
 
   def show
@@ -13,17 +14,23 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @room.topics.create(topic_params)
-    redirect_to room_path(@room)
+    @topic = Topic.new(topic_params)
+    @topic.room = @room
+
+    if @topic.save
+      redirect_to @room, notice: 'トピックを作成しました。'
+    else
+      render :new
+    end
   end
 
   private
 
   def set_room
-    @room = Room.find_by(token: params[:room_token])
+    @room = Room.find(params[:room_id])
   end
 
   def topic_params
-    params.require(:topic).permit(:name)
+    params.require(:topic).permit(:name, :who)
   end
 end

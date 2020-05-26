@@ -4,13 +4,11 @@
       - @topics.each do |topic|
         li.topics__item
           .topics__item-inner
-            .topics__item-to
-              | XXXXXXXXXに聞きたい！
+            .topics__item-to #{topic.who}に聞きたい！
             = topic.name
       li.topics__item
         .topics__item-inner
-          .topics__item-to
-            | 全ての質問が出尽くしました
+          .topics__item-to 全ての質問が出尽くしました
 
     = link_to '質問収集箱', room_path(@room), class: "topics__link"
 

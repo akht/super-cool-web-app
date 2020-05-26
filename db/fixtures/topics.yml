@@ -1,0 +1,14 @@
+topic_1:
+  name: モチベーションをどうやってたもっていますか
+  who: 勉強中の方
+  room: room_1
+
+topic_2:
+  name: 最近よく見るYoutube動画はなんですか
+  who: 皆さん
+  room: room_1
+
+topic_2:
+  name: これからの会社はオフィスをなくしてリモートワークのみにすべきでしょうか
+  who: 経営者の方
+  room: room_1

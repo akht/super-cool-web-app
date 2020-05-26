@@ -3,7 +3,6 @@ h1 Listing rooms
 table
   thead
     tr
-      th Name
       th
       th
       th
@@ -11,11 +10,6 @@ table
   tbody
     - @rooms.each do |room|
       tr
-        td = room.name
-        td = link_to 'Show', room
-        td = link_to 'Edit', edit_room_path(room)
-        td = link_to 'Destroy', room, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Room', new_room_path
+        td = link_to room.name, room
+        td = link_to '編集', edit_room_path(room)
+        td = link_to '削除', room, data: { confirm: '本当によろしいですか？' }, method: :delete

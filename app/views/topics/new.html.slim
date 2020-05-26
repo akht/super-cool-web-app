@@ -1,4 +1,11 @@
-= form_for([@room, @room.topics.build]) do |f|
+= form_for [@room, @topic] do |f|
+  - if @topic.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@topic.errors.count, "error")} prohibited this room from being saved:"
+      ul
+        - @topic.errors.full_messages.each do |message|
+          li = message
+
   .l-content
     header.form__header
       h1.form__title
@@ -9,17 +16,21 @@
           label.a-label
             | 誰に聞きたいですか？
           .form__input-container
-            = f.text_field :name, class: 'a-text-input', placeholder: '聞きたい人を入力', required: 'required'
+            = f.text_field :who, class: 'a-text-input', placeholder: '聞きたい人を入力', required: 'required'
             span.form__text
               | に聞きたい！
           .form__help.is-sm
-            | 例 : メンターの駒形さん、lsコマンドの課題が終わった方、就職した卒業生、参加者の誰か、地方から参加している方、毎日休まず学習をしている方、育児をしながら学習をしている方
+            | 例 : メンターの駒形さん、lsコマンドの課題が終わった方、就職した卒業生、
+            | 参加者の誰か、地方から参加している方、毎日休まず学習をしている方、育児をしながら学習をしている方
         .form__item
           label.a-label
             | 質問内容
           = f.text_area :name, class: 'a-text-input', placeholder: '質問文を入力', required: 'required'
           .form__help.is-sm
-            | 例 : 集中力が続かずついついNETFLIXを観てしまいます。集中力を持続させる工夫をしてますか？、わからないことを質問するのが難しいです。質問のコツを教えてください。就職先を選ぶポイントを教えてください。最近買ってよかったものって何かありますか？
+            | 例 : 集中力が続かずついついNETFLIXを観てしまいます。
+            | 集中力を持続させる工夫をしてますか？、わからないことを質問するのが難しいです。
+            | 質問のコツを教えてください。就職先を選ぶポイントを教えてください。
+            | 最近買ってよかったものって何かありますか？
       .form__actions
         = f.submit class: 'a-button', value: 'この質問を登録'
       .form__nav
