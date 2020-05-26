@@ -1,14 +1,22 @@
 .a-text-input
-  background-color: white
+  background-color: $base
+  background-image: linear-gradient($base, #ccc)
+  color: $default-text
+  border-radius: 8px
   width: 100%
-  height: 2.125em
+  height: 2.5em
   padding: 0 .5em
+  box-shadow: rgba(black, .4) 0 2px 4px inset, rgba(white, .3) 0 1px 2px
   font-weight: 800
-  transition: all .2s ease-out
+  border-style: solid
+  border-width: 1px
+  border-color: #2a206d #2a1f71 #6f61c7
+  transition: all .4s ease-out
   &:hover,
   &:focus,
   &:active
-    box-shadow: #ff9300 0 0 0 .125em
+    border-color: #7568ca #6356b7 #a398e8
+    box-shadow: rgba(black, .4) 0 2px 4px inset, rgba(white, .3) 0 1px 2px, rgba(white, .4) 0 0 16px
   +mq($from: mobile, $until: desktop)
     font-size: 1.25rem
   +mq($from: desktop)
@@ -17,27 +25,28 @@
 textarea.a-text-input
   height: auto
   padding: .25em .5em
-  line-height: 1.4
+  line-height: 1.5
   min-height: 8em
 
 textarea.a-copy-text
   font-size: 1.125rem
+  color: $default-text
   width: 100%
-  padding: 0 .5em
   height: auto
-  padding: .25em .5em
-  line-height: 1.4
+  padding: .5em .75em
+  line-height: 1.5
   min-height: 8em
   border: dashed 2px $black
   background-color: white
 
-
 .a-text-link
-  color: $black
-  text-decoration: underline
+  color: mix($reversal-text, $main, 70%)
+  text-decoration: none
   cursor: pointer
+  transition: all .2s ease-out
   &:hover
-    text-decoration: none
+    color: $reversal-text
+    text-decoration: underline
 
 =placeholder($color)
   &::placeholder
@@ -50,4 +59,12 @@ textarea.a-copy-text
     color: $color
 input,
 textarea
-  +placeholder(#ccc)
+  +placeholder(#bbb)
+
+.a-label
+  font-weight: 700
+  display: block
+  +mq($from: mobile, $until: desktop)
+    font-size: 1rem
+  +mq($from: desktop)
+    font-size: 1.5rem

@@ -6,22 +6,38 @@
         - @room.errors.full_messages.each do |message|
           li = message
 
-  .form.l-content
+  .l-content
     header.form__header
       - if @room.new_record?
-        h1.form__title.a-title-lg
-          | トーク部屋を名付けよう
+        h1.form__title
+          | イベント名を入力
       - else
-        h1.form__title.a-title-lg
-          | トーク部屋名の変更
-    .form__items
-      .form__item
-        = f.text_field :name, class: 'a-text-input', placeholder: '今度の水曜のランチ会'
-    .form__actions
-      .form__action
-        = f.submit class: 'a-button'
-    .form__nav
-      - if @room.new_record?
-        = link_to 'やっぱやめた', root_path, class: 'form__nav-link a-text-link'
-      - else
-        = link_to 'やっぱやめた', @room, class: 'form__nav-link a-text-link'
+        h1.form__title
+          | イベント名の変更
+    .form
+      .form__items
+        .form__item
+          = f.text_field :name, class: 'a-text-input', placeholder: 'ここにイベント名を入力', required: 'required'
+          .form__help
+            | 例 : #{Time.current.year}年#{Time.current.month}月のフィヨルドミートアップ
+      .form__actions
+        .form__action
+          = f.submit class: 'a-button is-disabled', value: 'このイベント名で決定', id: 'js-main-action'
+      .form__nav
+        - if @room.new_record?
+          = link_to 'トップに戻る', root_path, class: 'form__nav-link a-text-link'
+        - else
+          = link_to 'やっぱ変更なしで', @room, class: 'form__nav-link a-text-link'
+
+  javascript:
+    var input = document.getElementById('room_name')
+    document.addEventListener("turbolinks:load", updateValue);
+    input.addEventListener('input', updateValue);
+    function updateValue() {
+      if (!input.value || !input.value.match(/\S/g)) {
+        document.getElementById('js-main-action').classList.add('is-disabled');
+      } else {
+        document.getElementById('js-main-action').classList.remove('is-disabled');
+        document.getElementById('js-main-action').classList.add('animate__animated', 'animate__rubberBand');
+      }
+    }
