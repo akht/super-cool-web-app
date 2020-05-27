@@ -5,7 +5,7 @@
         li.topics__item
           .topics__item-inner
             .topics__item-to #{topic.who}に聞きたい！
-            = topic.name
+            .js-mikan = topic.name
       li.topics__item
         .topics__item-inner
           .topics__item-to 全ての質問が出尽くしました
@@ -20,7 +20,9 @@ javascript:
     touch: false,
     nav: false,
     arrowKeys: true
-  });
+  })
 
-  var sampleElement = document.getElementById('sample');
-  sampleElement.innerHTML = Mikan('常に最新、最高のモバイル。Androidを開発した同じチームから。');
+  const target = document.querySelector('.js-mikan')
+  if (target) {
+    target.innerHTML = Mikan(target.innerHTML)
+  }
