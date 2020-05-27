@@ -20,8 +20,9 @@ javascript:
     touch: false,
     nav: false,
     arrowKeys: true
-  });
+  })
 
-  const target = document.querySelector('.js-mikan');
-  const convert = (Mikan(target.innerHTML));
-  target.innerHTML = convert;
+  const target = document.querySelector('.js-mikan')
+  if (target) {
+    target.innerHTML = Mikan(target.innerHTML)
+  }
