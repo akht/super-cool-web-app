@@ -26,6 +26,9 @@ end
 group :development do
   gem 'html2slim'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rubocop-minitest'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'

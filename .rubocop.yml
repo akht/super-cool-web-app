@@ -1,0 +1,63 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-minitest
+
+AllCops:
+  Exclude:
+    - '**/templates/**/*'
+    - '**/vendor/**/*'
+    - 'app/views/**/*'
+    - 'config/**/*'
+    - 'node_modules/**/*'
+    - 'db/schema.rb'
+    - 'storage/**/*'
+    - 'tmp/**/*'
+
+Performance:
+  Exclude:
+    - '**/test/**/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*.rb'
+
+Layout/LineLength:
+  Max: 160
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
