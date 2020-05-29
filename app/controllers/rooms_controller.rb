@@ -14,7 +14,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to @room, notice: 'イベント完成！！'
+      redirect_to @room, notice: '質問収集箱完成！！'
     else
       render :new
     end
@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-      redirect_to @room, notice: 'イベント更新完了！！'
+      redirect_to @room, notice: '質問収集箱更新完了！！'
     else
       render :edit
     end

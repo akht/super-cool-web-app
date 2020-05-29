@@ -1,18 +1,17 @@
 doctype html
 html
   head
-    title フィヨルドトーーク！
+    = display_meta_tags default_meta_tags
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    script crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" src="https://code.jquery.com/jquery-3.4.1.min.js"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag "//cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s-narrow.min.css", media: "all"
-    = stylesheet_link_tag "//fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap", media: "all"
-    = stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css", media: "all"
+    = javascript_include_tag '//code.jquery.com/jquery-3.4.1.min.js', 'data-turbolinks-track': 'reload'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js', 'data-turbolinks-track': 'reload'
     = javascript_include_tag '//cdn.rawgit.com/trkbt10/mikan.js/232c8914/src/mikan.js', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css", media: "all"
-    meta content="width=device-width, initial-scale=1.0" name="viewport"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag '//cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s-narrow.min.css', media: 'all'
+    = stylesheet_link_tag '//fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap', media: 'all'
+    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css', media: 'all'
+    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css', media: 'all'
   body
     = yield

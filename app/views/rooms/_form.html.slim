@@ -1,18 +1,17 @@
-= form_for @room do |f|
-  - if @room.errors.any?
+= form_with model: room, local: true, html: { name: 'room' } do |f|
+  - if room.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@room.errors.count, "error")} prohibited this room from being saved:"
+      h2 = "#{pluralize(room.errors.count, "error")} prohibited this room from being saved:"
       ul
-        - @room.errors.full_messages.each do |message|
+        - room.errors.full_messages.each do |message|
           li = message
 
   .l-content
     header.form__header
-      - if @room.new_record?
-        h1.form__title
+      h1.form__title
+        - if room.new_record?
           | イベント名を入力
-      - else
-        h1.form__title
+        - else
           | イベント名の変更
     .form
       .form__items
@@ -24,10 +23,10 @@
         .form__action
           = f.submit class: 'a-button is-disabled', value: 'このイベント名で決定', id: 'js-main-action'
       .form__nav
-        - if @room.new_record?
+        - if room.new_record?
           = link_to 'トップに戻る', root_path, class: 'form__nav-link a-text-link'
         - else
-          = link_to 'やっぱ変更なしで', @room, class: 'form__nav-link a-text-link'
+          = link_to 'やっぱ変更なしで', room, class: 'form__nav-link a-text-link'
 
   javascript:
     var input = document.getElementById('room_name')

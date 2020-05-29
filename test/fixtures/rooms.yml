@@ -1,9 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+room_1:
+  name: 2020年02月10日のフィヨルドミートアップ
 
-one:
-  name: MyString
-  url: MyString
-
-two:
-  name: MyString
-  url: MyString
+room_2:
+  name: 2020年03月10日のフィヨルドミートアップ

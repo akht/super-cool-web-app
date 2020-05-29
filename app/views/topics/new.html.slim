@@ -1,4 +1,4 @@
-= form_for [@room, @topic] do |f|
+= form_with model: [@room, @topic], local: true, html: { name: 'topic' } do |f|
   - if @topic.errors.any?
     #error_explanation
       h2 = "#{pluralize(@topic.errors.count, "error")} prohibited this room from being saved:"
